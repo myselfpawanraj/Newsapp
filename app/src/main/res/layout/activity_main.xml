@@ -6,7 +6,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DBF1EF">
+    android:background="#121212">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -33,7 +33,11 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@android:string/search_go"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="@color/secondary_text"
+                android:textColorLink="#FFFFFF" />
         </LinearLayout>
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -96,10 +100,12 @@
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:gravity="center"
                     android:text="Choose one Category below !"
                     android:textAllCaps="true"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#ffffff"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:autoSizeTextType="uniform" />
@@ -114,6 +120,7 @@
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
+                        android:background="#FBFBFB"
                         android:onClick="changeInt"
                         android:scaleType="fitXY"
                         app:srcCompat="@drawable/inter" />
@@ -123,6 +130,7 @@
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
+                        android:background="#FFFFFF"
                         android:onClick="changeInd"
                         android:scaleType="fitXY"
                         app:srcCompat="@drawable/india" />
@@ -138,6 +146,7 @@
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
+                        android:background="#FFFFFF"
                         android:onClick="changeBusiness"
                         android:scaleType="fitXY"
                         app:srcCompat="@drawable/business" />
@@ -147,6 +156,7 @@
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
+                        android:background="#934444"
                         android:onClick="changeSports"
                         android:scaleType="fitXY"
                         app:srcCompat="@drawable/sports" />
@@ -163,6 +173,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
                     android:orientation="horizontal">
 
                     <TextView
@@ -176,7 +187,7 @@
                         android:text="Mailer Daemon"
                         android:textAllCaps="true"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#000000"
+                        android:textColor="#FFFFFF"
                         android:textSize="30sp"
                         android:textStyle="bold"
                         app:autoSizeTextType="uniform" />
@@ -187,6 +198,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
+                        android:background="#FFFFFF"
                         android:onClick="changeMd"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/md" />
@@ -212,6 +224,7 @@
                     android:text="Get updated with media of our Campus !"
                     android:textAllCaps="true"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/secondary_text"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:autoSizeTextType="uniform" />

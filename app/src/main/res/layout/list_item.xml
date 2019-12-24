@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#121212"
     android:paddingTop="18dp">
 
     <androidx.cardview.widget.CardView
@@ -15,6 +16,8 @@
         android:layout_marginTop="18dp"
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
+        android:background="#1F1F1F"
+        app:cardBackgroundColor="#1F1F1F"
         app:cardCornerRadius="8dp"
         app:contentPaddingTop="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,7 +45,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="8dp"
-                android:text="Slashdot.org" />
+                android:text="Slashdot.org"
+                android:textColor="#BB86FC" />
 
             <TextView
                 android:id="@+id/textViewHead"
@@ -51,6 +55,7 @@
                 android:paddingBottom="8dp"
                 android:text="Pawan"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -61,13 +66,15 @@
                 android:paddingBottom="8dp"
                 android:text="Description"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#FFFFFF"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Published: 6:00pm, 22 Dec, 2019\r\nUpdated: 6:00pm, 22 Dec, 2019" />
+                android:text="Published: 6:00pm, 22 Dec, 2019\r\nUpdated: 6:00pm, 22 Dec, 2019"
+                android:textColor="#FFFFFF" />
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
