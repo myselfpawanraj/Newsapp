@@ -6,17 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Switch;
 
-import com.example.newsapp.MainActivity;
-import com.example.newsapp.MyAdapter;
-import com.example.newsapp.PostList;
-import com.example.newsapp.R;
-import com.example.newsapp.newsApi;
-
-import java.util.ArrayList;
-import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
