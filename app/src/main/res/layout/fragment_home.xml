@@ -5,94 +5,101 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background" >
-    <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView2"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="12dp"
-        android:layout_weight="1"
+        android:layout_margin="8dp"
+        android:background="@color/colorPrimary"
         android:gravity="center"
-        android:text="Choose one Category below !"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:autoSizeTextType="uniform" />
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp">
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/username"
+            android:textColor="#EA4C88"
+            android:textSize="18sp" />
 
-        <ImageButton
-            android:id="@+id/imageButton6"
-            android:layout_width="0dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="4dp"
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="Choose one Category below !"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/inter" />
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/india" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/inter" />
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/imageButton7"
-            android:layout_width="0dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="8dp"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/india" />
+            <ImageButton
+                android:id="@+id/imageButton9"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/business" />
+
+            <ImageButton
+                android:id="@+id/imageButton10"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/sports" />
+        </LinearLayout>
+
+
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/imageButton9"
-            android:layout_width="0dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="4dp"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/business" />
-
-        <ImageButton
-            android:id="@+id/imageButton10"
-            android:layout_width="0dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="8dp"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/sports" />
-    </LinearLayout>
-
-    <View
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="8dp"
-        android:layout_weight="1"
-        android:background="#000000" />
-
-
-</LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

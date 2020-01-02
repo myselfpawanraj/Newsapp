@@ -1,5 +1,7 @@
 package com.example.newsapp;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -8,8 +10,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class home extends AppCompatActivity {
+    FirebaseDatabase database;
+    DatabaseReference users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

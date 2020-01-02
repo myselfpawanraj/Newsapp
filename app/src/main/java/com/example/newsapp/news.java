@@ -4,8 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -15,6 +16,7 @@ public class news extends AppCompatActivity {
     public PostList list;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
+    public List<List<Article>> HorizontalListItems=null ;
 
 
 
@@ -22,25 +24,25 @@ public class news extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
-
+        for(int i=0;i<=3;i++){
+        getData(i);}
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter=new verticalAdapter( HorizontalListItems, news.this );
+        recyclerView.setAdapter( adapter );
 
-        getData();
+
 
 
     }
 
 
-    private void getData()
+    private void getData(int i)
     {
         Call<PostList> postList;
-        int x = getIntent().getIntExtra("x",0);
-        switch (x){
-            case 0: postList= newsApi.getService().getIntPostList();
-                break;
+        switch (i){
             case 1: postList= newsApi.getService().getIndPostList();
                 break;
             case 2: postList= newsApi.getService().getSportsPostList();
@@ -54,8 +56,7 @@ public class news extends AppCompatActivity {
             @Override
             public void onResponse(Call<PostList> call, Response<PostList> response) {
                 list = response.body();
-                adapter = new MyAdapter(list.getArticles(), news.this);
-                recyclerView.setAdapter(adapter);
+                HorizontalListItems.add( list.getArticles() );
 
             }
 
@@ -64,10 +65,6 @@ public class news extends AppCompatActivity {
 
             }
         });
-    }
-    public void showfull(){
-        Intent intent = new Intent(news.this, newsfull.class);
-        startActivity(intent);
     }
 
 }

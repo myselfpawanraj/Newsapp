@@ -5,23 +5,22 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class horizontalAdapter extends RecyclerView.Adapter<horizontalAdapter.ViewHolder> {
     private List<Article> articleList;
     private Context context;
 
-    public MyAdapter(List<Article> listItems, Context context) {
+    public horizontalAdapter(List<Article> listItems, Context context) {
         this.articleList = listItems;
         this.context = context;
     }
@@ -43,7 +42,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         Picasso.with(context)
                 .load(listItem.getUrlToImage())
                 .into(holder.img);
-        holder.img.setOnClickListener(v -> {
+        holder.listView.setOnClickListener(v -> {
             Toast.makeText(context, listItem.getContent(), Toast.LENGTH_SHORT).show();
             Intent intent= new Intent(context,newsfull.class);
             intent.putExtra("url",listItem.getUrl());
@@ -67,6 +66,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         public TextView time = (TextView) itemView.findViewById(R.id.time);
         public TextView src = (TextView) itemView.findViewById(R.id.sourcename);
         public ImageView img = (ImageView) itemView.findViewById(R.id.imageView);
+        public CardView listView = (CardView) itemView.findViewById(R.id.card);;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
