@@ -9,9 +9,9 @@ public class newsApi {
     private static final String key ="7b7391918b29417c83ead665a59d60de";
     private static final String BASE_URL = "https://newsapi.org/v2/";
     private static final String linkInt = "top-headlines?sources=bbc-news&apiKey=";
-    private static final String linkInd = "top-headlines?country=in&pageSize=100&apiKey=";;
-    private static final String linkSport = "everything?q=sports&pageSize=100&apiKey=";
-    private static final String linkBussiness = "everything?q=business&pageSize=100&apiKey=";
+    private static final String linkInd = "top-headlines?country=in&pageSize=10&apiKey=";;
+    private static final String linkSport = "everything?q=sports&pageSize=10&apiKey=";
+    private static final String linkBussiness = "everything?q=business&pageSize=10&apiKey=";
 
     public static PostService postService = null;
     public static PostService getService()

@@ -16,11 +16,11 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class horizontalAdapter extends RecyclerView.Adapter<horizontalAdapter.ViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<Article> articleList;
     private Context context;
 
-    public horizontalAdapter(List<Article> listItems, Context context) {
+    public MyAdapter(List<Article> listItems, Context context) {
         this.articleList = listItems;
         this.context = context;
     }
@@ -35,7 +35,7 @@ public class horizontalAdapter extends RecyclerView.Adapter<horizontalAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Article listItem = articleList.get(position);
+        final Article listItem = articleList.get(position);
 
         holder.textViewHead.setText(listItem.getTitle());
         holder.textViewDesc.setText(listItem.getDescription());
