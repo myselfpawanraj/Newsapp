@@ -1,4 +1,4 @@
-package com.example.newsapp;
+package com.example.newsapp.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +12,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.view.menu.MenuView;
 import androidx.fragment.app.Fragment;
 
-public class fragMd extends Fragment {
+import com.example.newsapp.R;
+
+public class FragMd extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

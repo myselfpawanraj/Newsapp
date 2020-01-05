@@ -1,4 +1,4 @@
-package com.example.newsapp;
+package com.example.newsapp.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,15 +10,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.firebase.database.ChildEventListener;
+import com.example.newsapp.R;
+import com.example.newsapp.Model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-public class signup extends AppCompatActivity {
+public class SignupActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference users;
     EditText edtUsername,edtEmail,edtPassword;
@@ -48,15 +48,15 @@ public class signup extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.child(user.getUsername()).exists())
-                        Toast.makeText(signup.this, "Username already exists!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignupActivity.this, "Username already exists!", Toast.LENGTH_SHORT).show();
                         else {
                             if(user.getPassword().length()<5){
-                                Toast.makeText(signup.this, "Password must be greater than 5 letters!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignupActivity.this, "Password must be greater than 5 letters!", Toast.LENGTH_SHORT).show();
                             }
                             else
                             {users.child(user.getUsername()).setValue(user);
-                            Toast.makeText(signup.this, "Successfully registered!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(signup.this, login.class);
+                            Toast.makeText(SignupActivity.this, "Successfully registered!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
                             startActivity(intent);}
                         }
                     }

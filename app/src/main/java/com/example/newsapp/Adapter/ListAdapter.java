@@ -1,5 +1,5 @@
 
-package com.example.newsapp;
+package com.example.newsapp.Adapter;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,12 +8,16 @@ import android.view.LayoutInflater;
         import androidx.annotation.NonNull;
         import androidx.recyclerview.widget.LinearLayoutManager;
         import androidx.recyclerview.widget.RecyclerView;
-        import java.util.List;
-public class listAdapter extends RecyclerView.Adapter<listAdapter.ViewHolder> {
+
+import com.example.newsapp.Model.Article;
+import com.example.newsapp.R;
+
+import java.util.List;
+public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private List<List<Article>> articleList;
     private Context context;
 
-    public listAdapter(List<List<Article>> listItems, Context context) {
+    public ListAdapter(List<List<Article>> listItems, Context context) {
         this.articleList = listItems;
         this.context = context;
     }

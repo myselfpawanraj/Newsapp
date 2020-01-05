@@ -1,15 +1,14 @@
-package com.example.newsapp;
+package com.example.newsapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
+
+import com.example.newsapp.R;
 
 
-
-public class splashScreen extends AppCompatActivity {
+public class SplashScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +28,9 @@ public class splashScreen extends AppCompatActivity {
             catch (InterruptedException e){
                 e.printStackTrace();
             }
-            Intent i = new Intent(splashScreen.this, login.class);
+            Intent i = new Intent(SplashScreenActivity.this, LoginActivity.class);
             startActivity(i);
-            splashScreen.this.finish();
+            SplashScreenActivity.this.finish();
         }
 
     }

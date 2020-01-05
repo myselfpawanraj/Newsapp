@@ -1,4 +1,4 @@
-package com.example.newsapp;
+package com.example.newsapp.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.newsapp.Activity.NewsfullActivity;
+import com.example.newsapp.Model.Article;
+import com.example.newsapp.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -44,7 +47,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 .into(holder.img);
         holder.listView.setOnClickListener(v -> {
             Toast.makeText(context, listItem.getContent(), Toast.LENGTH_SHORT).show();
-            Intent intent= new Intent(context,newsfull.class);
+            Intent intent= new Intent(context, NewsfullActivity.class);
             intent.putExtra("url",listItem.getUrl());
             context.startActivity(intent);
 

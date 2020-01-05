@@ -1,13 +1,10 @@
-package com.example.newsapp;
+package com.example.newsapp.Fragments;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,7 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class fragNews extends Fragment {
+import com.example.newsapp.Activity.NewsActivity;
+import com.example.newsapp.R;
+
+public class FragNews extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class fragNews extends Fragment {
         international.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), news.class);
+                Intent intent = new Intent(getContext(), NewsActivity.class);
                 intent.putExtra("x", 0);
                 startActivity(intent);
             }
@@ -43,7 +43,7 @@ public class fragNews extends Fragment {
         india.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), news.class);
+                Intent intent = new Intent(getContext(), NewsActivity.class);
                 intent.putExtra("x",1);
                 startActivity(intent);
             }
@@ -51,7 +51,7 @@ public class fragNews extends Fragment {
         business.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), news.class);
+                Intent intent = new Intent(getContext(), NewsActivity.class);
                 intent.putExtra("x",2);
                 startActivity(intent);
             }
@@ -59,7 +59,7 @@ public class fragNews extends Fragment {
         sports.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), news.class);
+                Intent intent = new Intent(getContext(), NewsActivity.class);
                 intent.putExtra("x",3);
                 startActivity(intent);
             }

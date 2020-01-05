@@ -1,4 +1,4 @@
-package com.example.newsapp;
+package com.example.newsapp.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,15 +13,16 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-import com.google.firebase.database.ChildEventListener;
+
+import com.example.newsapp.R;
+import com.example.newsapp.Model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-public class login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference users;
     CheckBox checkBox;
@@ -43,7 +44,7 @@ public class login extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(login.this, signup.class);
+                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(intent);
             }
         });
@@ -70,25 +71,25 @@ public class login extends AppCompatActivity {
                     if(!username.isEmpty()){
                         User login = dataSnapshot.child(username).getValue(User.class);
                         if(login.getPassword().equals(password)){
-                            Toast.makeText(login.this, "Successfully logged in!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Successfully logged in!", Toast.LENGTH_SHORT).show();
                             if (checkBox.isChecked()) {
                                 stayloggedin();
                             }
-                            Intent intent = new Intent(login.this, home.class);
+                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             startActivity(intent);
-                            login.this.finish();
+                            LoginActivity.this.finish();
                         }
                         else{
-                            Toast.makeText(login.this, "Wrong password!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Wrong password!", Toast.LENGTH_SHORT).show();
                         }
                     }
                     else
-                        Toast.makeText(login.this, "Input Username!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Input Username!", Toast.LENGTH_SHORT).show();
 
                 }
                 else {
 
-                    Toast.makeText(login.this, "Username not registered!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Username not registered!", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -114,8 +115,8 @@ public class login extends AppCompatActivity {
         SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
         String check =sharedPref.getString(getString(R.string.stayloggedin), "false");
         if(check.equals("true")){
-            Toast.makeText(login.this, "Logging using previous data!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(login.this, home.class);
+            Toast.makeText(LoginActivity.this, "Logging using previous data!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
             startActivity(intent);
         }
     }

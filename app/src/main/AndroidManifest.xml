@@ -12,8 +12,9 @@
         android:roundIcon="@drawable/logonew"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:largeHeap="true"
         android:usesCleartextTraffic="true">
-        <activity android:name=".splashScreen">
+        <activity android:name=".Activity.SplashScreenActivity">
 
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -22,15 +23,15 @@
         </intent-filter>
         </activity>
         <activity
-            android:name=".login"
+            android:name=".Activity.LoginActivity"
             android:label="NewsApp">
 
         </activity>
-        <activity android:name=".signup" />
-        <activity android:name=".home" />
-        <activity android:name=".newsfull" />
+        <activity android:name=".Activity.SignupActivity" />
+        <activity android:name=".Activity.HomeActivity" />
+        <activity android:name=".Activity.NewsfullActivity" />
         <activity
-            android:name=".news"
+            android:name=".Activity.NewsActivity"
             android:label="Top Headlines" />
     </application>
 

@@ -1,11 +1,13 @@
-package com.example.newsapp;
+package com.example.newsapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.webkit.WebView;
 
-public class newsfull extends AppCompatActivity {
+import com.example.newsapp.R;
+
+public class NewsfullActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
