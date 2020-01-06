@@ -19,15 +19,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/username"
-            android:textColor="#EA4C88"
-            android:textSize="18sp" />
-
-        <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,63 +33,10 @@
             android:textStyle="bold"
             app:autoSizeTextType="uniform" />
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vertirecy"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
-
-            <ImageButton
-                android:id="@+id/imageButton6"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="4dp"
-                android:layout_marginBottom="8dp"
-                android:layout_weight="1"
-                android:background="#FFFFFF"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/inter" />
-
-            <ImageButton
-                android:id="@+id/imageButton7"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="8dp"
-                android:layout_weight="1"
-                android:background="#FFFFFF"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/india" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/imageButton9"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="4dp"
-                android:layout_weight="1"
-                android:background="#FFFFFF"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/business" />
-
-            <ImageButton
-                android:id="@+id/imageButton10"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="8dp"
-                android:layout_weight="1"
-                android:background="#FFFFFF"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/sports" />
-        </LinearLayout>
+            android:layout_height="match_parent" />
 
 
     </LinearLayout>

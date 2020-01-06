@@ -1,71 +1,108 @@
 package com.example.newsapp.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-import com.example.newsapp.Activity.NewsActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.example.newsapp.Adapter.ListAdapter;
+import com.example.newsapp.Api.NewsApi;
+import com.example.newsapp.Model.Article;
+import com.example.newsapp.Model.PostList;
 import com.example.newsapp.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class FragNews extends Fragment {
+
+    public PostList list;
+    public List<List<Article>> verticalList = new ArrayList<>();
+    ListAdapter adapter;
+    private RecyclerView recyclerView;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_home, container, false);
-        ImageView international = (ImageView) v.findViewById(R.id.imageButton6);
-        ImageView india = (ImageView) v.findViewById(R.id.imageButton7);
-        ImageView business = (ImageView) v.findViewById(R.id.imageButton9);
-        ImageView sports = (ImageView) v.findViewById(R.id.imageButton10);
+        recyclerView=(RecyclerView) v.findViewById( R.id.vertirecy );
         TextView username = (TextView) v.findViewById(R.id.username);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-
-        //to show username in menu
-        String user=null;
-        username.setText(user);
-
-
-        international.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), NewsActivity.class);
-                intent.putExtra("x", 0);
-                startActivity(intent);
-            }
-        });
-        india.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), NewsActivity.class);
-                intent.putExtra("x",1);
-                startActivity(intent);
-            }
-        });
-        business.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), NewsActivity.class);
-                intent.putExtra("x",2);
-                startActivity(intent);
-            }
-        });
-        sports.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), NewsActivity.class);
-                intent.putExtra("x",3);
-                startActivity(intent);
-            }
-        });
-
-
+        getData();
         return v;
+    }
+
+
+
+    private void getData() {
+        Call<PostList> postList;
+        postList = NewsApi.getService().getIntPostList();
+        postList.enqueue(new Callback<PostList>() {
+            @Override
+            public void onResponse(Call<PostList> call, Response<PostList> response) {
+                list = response.body();
+                verticalList.add(list.getArticles());
+            }
+
+            @Override
+            public void onFailure(Call<PostList> call, Throwable t) {
+            }
+        });
+        postList = NewsApi.getService().getIndPostList();
+        postList.enqueue(new Callback<PostList>() {
+            @Override
+            public void onResponse(Call<PostList> call, Response<PostList> response) {
+                list = response.body();
+                verticalList.add(list.getArticles());
+
+            }
+
+            @Override
+            public void onFailure(Call<PostList> call, Throwable t) {
+
+            }
+        });
+        postList = NewsApi.getService().getSportsPostList();
+        postList.enqueue(new Callback<PostList>() {
+            @Override
+            public void onResponse(Call<PostList> call, Response<PostList> response) {
+                list = response.body();
+                verticalList.add(list.getArticles());
+
+            }
+
+            @Override
+            public void onFailure(Call<PostList> call, Throwable t) {
+
+            }
+        });
+        postList = NewsApi.getService().getBusinessPostList();
+        postList.enqueue(new Callback<PostList>() {
+            @Override
+            public void onResponse(Call<PostList> call, Response<PostList> response) {
+                list = response.body();
+                verticalList.add(list.getArticles());
+
+            }
+
+            @Override
+            public void onFailure(Call<PostList> call, Throwable t) {
+
+            }
+        });
+        adapter = new ListAdapter(verticalList, getContext());
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 }
