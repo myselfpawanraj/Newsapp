@@ -101,8 +101,11 @@ public class FragNews extends Fragment {
 
             }
         });
+
+
         adapter = new ListAdapter(verticalList, getContext());
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+
     }
 }

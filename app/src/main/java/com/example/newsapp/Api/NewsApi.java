@@ -10,7 +10,7 @@ import retrofit2.http.GET;
 public class NewsApi {
     private static final String key ="7b7391918b29417c83ead665a59d60de";
     private static final String BASE_URL = "https://newsapi.org/v2/";
-    private static final String linkInt = "top-headlines?sources=bbc-NewsActivity&apiKey=";
+    private static final String linkInt = "top-headlines?sources=techcrunch&apiKey=";
     private static final String linkInd = "top-headlines?country=in&pageSize=10&apiKey=";;
     private static final String linkSport = "everything?q=sports&pageSize=10&apiKey=";
     private static final String linkBussiness = "everything?q=business&pageSize=10&apiKey=";
