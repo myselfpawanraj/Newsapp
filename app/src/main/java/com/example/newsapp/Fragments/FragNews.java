@@ -26,16 +26,14 @@ import retrofit2.Response;
 
 public class FragNews extends Fragment {
 
-    public PostList list;
-    public List<List<Article>> verticalList = new ArrayList<>();
-    ListAdapter adapter;
+    private PostList list;
+    private List<List<Article>> verticalList = new ArrayList<>();
     private RecyclerView recyclerView;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerView=(RecyclerView) v.findViewById( R.id.vertirecy );
-        TextView username = (TextView) v.findViewById(R.id.username);
+        recyclerView= v.findViewById( R.id.vertirecy );
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -52,6 +50,7 @@ public class FragNews extends Fragment {
             @Override
             public void onResponse(Call<PostList> call, Response<PostList> response) {
                 list = response.body();
+                assert list != null;
                 verticalList.add(list.getArticles());
             }
 
@@ -64,6 +63,7 @@ public class FragNews extends Fragment {
             @Override
             public void onResponse(Call<PostList> call, Response<PostList> response) {
                 list = response.body();
+                assert list != null;
                 verticalList.add(list.getArticles());
 
             }
@@ -78,6 +78,7 @@ public class FragNews extends Fragment {
             @Override
             public void onResponse(Call<PostList> call, Response<PostList> response) {
                 list = response.body();
+                assert list != null;
                 verticalList.add(list.getArticles());
 
             }
@@ -92,6 +93,7 @@ public class FragNews extends Fragment {
             @Override
             public void onResponse(Call<PostList> call, Response<PostList> response) {
                 list = response.body();
+                assert list != null;
                 verticalList.add(list.getArticles());
 
             }
@@ -103,8 +105,8 @@ public class FragNews extends Fragment {
         });
 
 
-        adapter = new ListAdapter(verticalList, getContext());
-        recyclerView.setAdapter(adapter);
+        ListAdapter adapter = new ListAdapter( verticalList, getContext() );
+        recyclerView.setAdapter( adapter );
         adapter.notifyDataSetChanged();
 
     }
