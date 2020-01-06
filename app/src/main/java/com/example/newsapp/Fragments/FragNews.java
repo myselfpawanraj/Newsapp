@@ -1,6 +1,7 @@
 package com.example.newsapp.Fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,7 @@ import retrofit2.Response;
 public class FragNews extends Fragment {
 
     private PostList list;
-    private List<List<Article>> verticalList = new ArrayList<>();
+    private List<List<Article>> verticalList;
     private RecyclerView recyclerView;
     @Nullable
     @Override
@@ -37,11 +38,10 @@ public class FragNews extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        verticalList = new ArrayList<>();
         getData();
         return v;
     }
-
-
 
     private void getData() {
         Call<PostList> postList;
@@ -50,8 +50,9 @@ public class FragNews extends Fragment {
             @Override
             public void onResponse(Call<PostList> call, Response<PostList> response) {
                 list = response.body();
-                assert list != null;
                 verticalList.add(list.getArticles());
+
+                Log.i("count1",verticalList.size()+"");
             }
 
             @Override
@@ -63,8 +64,9 @@ public class FragNews extends Fragment {
             @Override
             public void onResponse(Call<PostList> call, Response<PostList> response) {
                 list = response.body();
-                assert list != null;
                 verticalList.add(list.getArticles());
+
+                Log.i("count2",verticalList.size()+"");
 
             }
 
@@ -78,8 +80,9 @@ public class FragNews extends Fragment {
             @Override
             public void onResponse(Call<PostList> call, Response<PostList> response) {
                 list = response.body();
-                assert list != null;
                 verticalList.add(list.getArticles());
+
+                Log.i("count3",verticalList.size()+"");
 
             }
 
@@ -93,8 +96,9 @@ public class FragNews extends Fragment {
             @Override
             public void onResponse(Call<PostList> call, Response<PostList> response) {
                 list = response.body();
-                assert list != null;
                 verticalList.add(list.getArticles());
+
+                Log.i("count4",verticalList.size()+"");
 
             }
 
@@ -104,10 +108,8 @@ public class FragNews extends Fragment {
             }
         });
 
-
         ListAdapter adapter = new ListAdapter( verticalList, getContext() );
         recyclerView.setAdapter( adapter );
-        adapter.notifyDataSetChanged();
 
     }
 }

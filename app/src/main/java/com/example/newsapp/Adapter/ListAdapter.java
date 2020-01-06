@@ -25,7 +25,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext())
+        View v = LayoutInflater.from(context)
                 .inflate(R.layout.list_item,parent,false);
         return new ViewHolder(v);
     }
@@ -44,12 +44,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        Log.i("counting",articleList.size()+"");
+        Log.i("getItemCount",articleList.size()+"");
         return articleList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        public RecyclerView verticalItem= (RecyclerView) itemView.findViewById(R.id.verticleitem);
+        public RecyclerView verticalItem= itemView.findViewById(R.id.verticleitem);
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
