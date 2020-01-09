@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,30 +32,30 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_item,parent,false);
-        return new ViewHolder(v);
+        View v = LayoutInflater.from( parent.getContext() )
+                .inflate( R.layout.list_item, parent, false );
+        return new ViewHolder( v );
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final Article listItem = articleList.get(position);
+        final Article listItem = articleList.get( position );
 
-        holder.textViewHead.setText(listItem.getTitle());
-        holder.textViewDesc.setText(listItem.getDescription());
-        Picasso.with(context)
-                .load(listItem.getUrlToImage())
-                .into(holder.img);
-        holder.listView.setOnClickListener(v -> {
-            Toast.makeText(context, listItem.getContent(), Toast.LENGTH_SHORT).show();
-            Intent intent= new Intent(context, NewsfullActivity.class);
-            intent.putExtra("url",listItem.getUrl());
-            context.startActivity(intent);
+        holder.textViewHead.setText( listItem.getTitle() );
+        holder.textViewDesc.setText( listItem.getDescription() );
+        Picasso.with( context )
+                .load( listItem.getUrlToImage() )
+                .into( holder.img );
+        holder.listView.setOnClickListener( v -> {
+            Toast.makeText( context, listItem.getContent(), Toast.LENGTH_SHORT ).show();
+            Intent intent = new Intent( context, NewsfullActivity.class );
+            intent.putExtra( "url", listItem.getUrl() );
+            context.startActivity( intent );
 
-        });
+        } );
 
-        holder.time.setText(listItem.getPublishedAt());
-        holder.src.setText(listItem.getSource().getName());
+        holder.time.setText( listItem.getPublishedAt() );
+        holder.src.setText( listItem.getSource().getName() );
 
     }
 
@@ -63,16 +64,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         return articleList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        public TextView textViewHead= (TextView) itemView.findViewById(R.id.textViewHead);
-        public TextView textViewDesc= (TextView) itemView.findViewById(R.id.textViewDesc);
-        public TextView time = (TextView) itemView.findViewById(R.id.time);
-        public TextView src = (TextView) itemView.findViewById(R.id.sourcename);
-        public ImageView img = (ImageView) itemView.findViewById(R.id.imageView);
-        public CardView listView = (CardView) itemView.findViewById(R.id.card);;
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView textViewHead = (TextView) itemView.findViewById( R.id.textViewHead );
+        public TextView textViewDesc = (TextView) itemView.findViewById( R.id.textViewDesc );
+        public TextView time = (TextView) itemView.findViewById( R.id.time );
+        public TextView src = (TextView) itemView.findViewById( R.id.sourcename );
+        public ImageView img = (ImageView) itemView.findViewById( R.id.imageView );
+        public CardView listView = (CardView) itemView.findViewById( R.id.card );
+        ;
 
         public ViewHolder(@NonNull View itemView) {
-            super(itemView);
+            super( itemView );
         }
     }
 

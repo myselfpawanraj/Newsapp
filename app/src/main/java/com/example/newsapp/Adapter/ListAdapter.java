@@ -14,42 +14,40 @@ import com.example.newsapp.R;
 
 import java.util.List;
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
-    private List<List<Article>> articleList;
+    private List<List<Article>> newsList;
     private Context context;
 
     public ListAdapter(List<List<Article>> listItems, Context context) {
-        this.articleList = listItems;
+        this.newsList = listItems;
         this.context = context;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context)
-                .inflate(R.layout.list_item,parent,false);
-        return new ViewHolder(v);
+        View view = LayoutInflater.from(context)
+                .inflate(R.layout.verticleitem,parent,false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        final List<Article> listItem = articleList.get(position);
+        final List<Article> listItem = newsList.get(position);
         MyAdapter adapter =new MyAdapter(listItem,context);
-        holder.verticalItem.setAdapter(adapter);
         holder.verticalItem.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-        holder.verticalItem.setLayoutManager(layoutManager);
-
+        holder.verticalItem.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+        holder.verticalItem.setAdapter(adapter);
     }
 
     @Override
     public int getItemCount() {
-        Log.i("getItemCount",articleList.size()+"");
-        return articleList.size();
+        Log.i("getItemCount",newsList.size()+"");
+        return newsList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        public RecyclerView verticalItem= itemView.findViewById(R.id.verticleitem);
+        public RecyclerView verticalItem= (RecyclerView) itemView.findViewById(R.id.verticleitem);
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1F1F1F">
+    android:background="@drawable/signupback">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -15,9 +15,10 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:animateLayoutChanges="false"
         android:background="@color/colorPrimary"
         app:cardBackgroundColor="@color/colorPrimary"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -25,7 +26,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#2C3239"
+            android:layout_margin="2dp"
+            android:background="#FFFFFF"
             android:orientation="vertical">
 
             <TextView
@@ -47,11 +49,9 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="18dp"
                 android:layout_marginEnd="24dp"
-                android:inputType="textEmailAddress"
                 android:hint="Email"
+                android:inputType="textEmailAddress"
                 android:selectAllOnFocus="true"
-                android:textColor="#FFFFFF"
-                android:textColorHighlight="#FFFFFF"
                 android:textColorHint="@color/secondary_text" />
 
             <EditText
@@ -65,8 +65,6 @@
                 android:hint="Username"
                 android:inputType="textPersonName"
                 android:selectAllOnFocus="true"
-                android:textColor="#FFFFFF"
-                android:textColorHighlight="#FFFFFF"
                 android:textColorHint="@color/secondary_text" />
 
             <EditText
@@ -81,8 +79,6 @@
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:selectAllOnFocus="true"
-                android:textColor="#FFFFFF"
-                android:textColorHighlight="#FFFFFF"
                 android:textColorHint="@color/secondary_text" />
 
             <Button
@@ -97,6 +93,7 @@
                 android:background="#EA4C88"
                 android:text="Register"
                 android:textColor="#000000" />
+
             <ProgressBar
                 android:id="@+id/loading"
                 android:layout_width="wrap_content"

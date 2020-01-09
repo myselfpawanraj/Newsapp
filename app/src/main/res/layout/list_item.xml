@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/background"
     android:paddingTop="18dp">
 
     <androidx.cardview.widget.CardView
@@ -17,7 +16,7 @@
         android:layout_marginTop="18dp"
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
-        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardBackgroundColor="#CCFF90"
         app:cardCornerRadius="8dp"
         app:contentPaddingTop="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -52,10 +51,11 @@
                 android:id="@+id/textViewHead"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:lines="2"
                 android:paddingBottom="8dp"
                 android:text="Pawan"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -63,10 +63,11 @@
                 android:id="@+id/textViewDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:lines="5"
                 android:paddingBottom="8dp"
                 android:text="Description"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="16sp" />
 
             <TextView
@@ -74,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Published: 6:00pm, 22 Dec, 2019\r\nUpdated: 6:00pm, 22 Dec, 2019"
-                android:textColor="#FFFFFF" />
+                android:textColor="#000000" />
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>

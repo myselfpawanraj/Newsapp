@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/backabout"
         android:orientation="vertical">
 
         <TextView
@@ -20,7 +21,6 @@
             android:layout_marginTop="40dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:background="@color/colorPrimaryDark"
             android:fontFamily="cursive"
             android:gravity="center"
             android:padding="8dp"
@@ -38,11 +38,13 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginRight="8dp"
-            app:cardBackgroundColor="@color/colorPrimary">
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
@@ -62,6 +64,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical"
                     android:padding="8dp">
 
@@ -114,7 +117,6 @@
             android:layout_marginTop="40dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:background="@color/colorPrimaryDark"
             android:fontFamily="cursive"
             android:gravity="center"
             android:padding="8dp"
@@ -133,11 +135,13 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginRight="8dp"
-            app:cardBackgroundColor="@color/colorPrimary">
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
@@ -157,6 +161,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical"
                     android:padding="8dp">
 
