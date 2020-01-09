@@ -54,7 +54,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         } );
 
-        holder.time.setText( listItem.getPublishedAt() );
+        holder.time.setText( listItem.getPublishedAt().substring( 0,10 )+" "+listItem.getPublishedAt().substring( 11,19 ) );
         holder.src.setText( listItem.getSource().getName() );
 
     }

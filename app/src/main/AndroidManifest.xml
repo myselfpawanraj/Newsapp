@@ -33,6 +33,10 @@
         <activity
             android:name=".Activity.NewsActivity"
             android:label="Top Headlines" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

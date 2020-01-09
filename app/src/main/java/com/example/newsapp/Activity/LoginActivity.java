@@ -27,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     DatabaseReference users;
     CheckBox checkBox;
     String username;
+    ProgressBar loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         final Button btnRegister = (Button) findViewById(R.id.btnreg);
         final Button btnSignIn = (Button) findViewById(R.id.btnSignIn);
         checkBox = (CheckBox) findViewById(R.id.checkBox);
-        ProgressBar loading = (ProgressBar) findViewById(R.id.loading);
+        loading = (ProgressBar) findViewById(R.id.loading);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                     if(!username.isEmpty()){
                         User login = dataSnapshot.child(username).getValue(User.class);
                         if(login.getPassword().equals(password)){
+                            setUsername();
                             Toast.makeText(LoginActivity.this, "Successfully logged in!", Toast.LENGTH_SHORT).show();
                             if (checkBox.isChecked()) {
                                 stayloggedin();
@@ -81,15 +83,17 @@ public class LoginActivity extends AppCompatActivity {
                         }
                         else{
                             Toast.makeText(LoginActivity.this, "Wrong password!", Toast.LENGTH_SHORT).show();
+                            loading.setVisibility(View.INVISIBLE);
                         }
                     }
-                    else
-                        Toast.makeText(LoginActivity.this, "Input Username!", Toast.LENGTH_SHORT).show();
-
+                    else {
+                        Toast.makeText( LoginActivity.this, "Input Username!", Toast.LENGTH_SHORT ).show();
+                        loading.setVisibility( View.INVISIBLE );
+                    }
                 }
                 else {
-
                     Toast.makeText(LoginActivity.this, "Username not registered!", Toast.LENGTH_SHORT).show();
+                    loading.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -103,21 +107,27 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void stayloggedin(){
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences("CheckLogin", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString(getString(R.string.stayloggedin), "true");
+        editor.putString("login", "true");
         editor.apply();
     }
 
 
     public void checkloggedin(){
-
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        String check =sharedPref.getString(getString(R.string.stayloggedin), "false");
+        SharedPreferences sharedPref = getSharedPreferences("CheckLogin", Context.MODE_PRIVATE);
+        String check =sharedPref.getString("login","false" );
         if(check.equals("true")){
             Toast.makeText(LoginActivity.this, "Logging using previous data!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
             startActivity(intent);
         }
+    }
+    public void setUsername(){
+        SharedPreferences sharedPref = getSharedPreferences("A", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("name", username);
+        editor.apply();
     }
 }
