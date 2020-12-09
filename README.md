@@ -1,6 +1,4 @@
-[![Home Page](https://raw.githubusercontent.com/myselfpawanraj/Newsapp/master/Screenshots/1.PNG)]
-[![Signin Page](https://raw.githubusercontent.com/myselfpawanraj/Newsapp/master/Screenshots/2.PNG)]
-[![Signup Page](https://raw.githubusercontent.com/myselfpawanraj/Newsapp/master/Screenshots/3.PNG)]
+
 # MailerISM News App
 
 ### About
@@ -20,3 +18,10 @@ News App is an android app to get you latest news all around the wold under diff
 
 * [newsapi.org](https://talk.openmrs.org/t/openmrs-android-client-user-guide/9845) APIs are used for the data to be shown.
 * Images from google.
+
+
+#### Screenshots of the App.
+
+[![Home Page](https://raw.githubusercontent.com/myselfpawanraj/Newsapp/master/Screenshots/1.PNG)]
+[![Signin Page](https://raw.githubusercontent.com/myselfpawanraj/Newsapp/master/Screenshots/2.PNG)]
+[![Signup Page](https://raw.githubusercontent.com/myselfpawanraj/Newsapp/master/Screenshots/3.PNG)]
