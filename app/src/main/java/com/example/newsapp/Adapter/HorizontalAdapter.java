@@ -20,11 +20,11 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class HorizontalAdapter extends RecyclerView.Adapter< HorizontalAdapter.ViewHolder> {
     private List<Article> articleList;
     private Context context;
 
-    public MyAdapter(List<Article> listItems, Context context) {
+    public HorizontalAdapter(List<Article> listItems, Context context) {
         this.articleList = listItems;
         this.context = context;
     }
@@ -33,7 +33,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from( parent.getContext() )
-                .inflate( R.layout.list_item, parent, false );
+                .inflate( R.layout.card_horizontal, parent, false );
         return new ViewHolder( v );
     }
 
@@ -42,8 +42,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         final Article listItem = articleList.get( position );
 
         holder.textViewHead.setText( listItem.getTitle() );
-        holder.textViewDesc.setText( listItem.getDescription() );
-        Picasso.with( context )
+        // holder.textViewDesc.setText( listItem.getDescription() );
+        Picasso.get()
                 .load( listItem.getUrlToImage() )
                 .into( holder.img );
         holder.listView.setOnClickListener( v -> {
@@ -66,7 +66,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView textViewHead = (TextView) itemView.findViewById( R.id.textViewHead );
-        public TextView textViewDesc = (TextView) itemView.findViewById( R.id.textViewDesc );
+        // public TextView textViewDesc = (TextView) itemView.findViewById( R.id.textViewDesc );
         public TextView time = (TextView) itemView.findViewById( R.id.time );
         public TextView src = (TextView) itemView.findViewById( R.id.sourcename );
         public ImageView img = (ImageView) itemView.findViewById( R.id.imageView );

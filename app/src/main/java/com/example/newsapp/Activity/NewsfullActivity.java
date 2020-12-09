@@ -18,7 +18,5 @@ public class NewsfullActivity extends AppCompatActivity {
         String url=getIntent().getStringExtra("url");
         WebView mywebview = (WebView) findViewById(R.id.news);
         mywebview.loadUrl(url+"/");
-
-
     }
 }

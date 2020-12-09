@@ -52,6 +52,7 @@
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:selectAllOnFocus="true"
+                android:singleLine="true"
                 android:textColorHint="@color/secondary_text" />
 
             <EditText
@@ -65,6 +66,7 @@
                 android:hint="Username"
                 android:inputType="textPersonName"
                 android:selectAllOnFocus="true"
+                android:singleLine="true"
                 android:textColorHint="@color/secondary_text" />
 
             <EditText
@@ -79,6 +81,7 @@
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:selectAllOnFocus="true"
+                android:singleLine="true"
                 android:textColorHint="@color/secondary_text" />
 
             <Button
