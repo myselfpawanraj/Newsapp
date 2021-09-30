@@ -25,3 +25,7 @@ News App is an android app to get you latest news all around the wold under diff
 [![Home Page](https://raw.githubusercontent.com/myselfpawanraj/Newsapp/master/Screenshots/1.PNG)]
 [![Signin Page](https://raw.githubusercontent.com/myselfpawanraj/Newsapp/master/Screenshots/2.PNG)]
 [![Signup Page](https://raw.githubusercontent.com/myselfpawanraj/Newsapp/master/Screenshots/3.PNG)]
+
+
+### Author
+[Pawan Raj](https://github.com/myselfpawanraj)
