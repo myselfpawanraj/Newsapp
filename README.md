@@ -14,18 +14,14 @@ News App is an android app to get you latest news all around the wold under diff
 - Firebase authentication system to create user's profile.
 - Additional features.
 
-#### Resource Used
+### Resource Used
 
 * [newsapi.org](https://talk.openmrs.org/t/openmrs-android-client-user-guide/9845) APIs are used for the data to be shown.
 * Images from google.
 
 
-#### Screenshot of the App.
+### Screenshot of the App.
 
 [![Home Page](https://raw.githubusercontent.com/myselfpawanraj/Newsapp/master/Screenshots/1.PNG)]
 [![Signin Page](https://raw.githubusercontent.com/myselfpawanraj/Newsapp/master/Screenshots/2.PNG)]
 [![Signup Page](https://raw.githubusercontent.com/myselfpawanraj/Newsapp/master/Screenshots/3.PNG)]
-
-
-### Author
-[Pawan Raj](https://github.com/myselfpawanraj)
