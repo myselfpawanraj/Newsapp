@@ -1,5 +1,5 @@
 
-# MailerISM News App
+## MailerISM News App
 
 ### About
 
@@ -20,7 +20,7 @@ News App is an android app to get you latest news all around the wold under diff
 * Images from google.
 
 
-#### Screenshots of the App.
+#### Screenshot of the App.
 
 [![Home Page](https://raw.githubusercontent.com/myselfpawanraj/Newsapp/master/Screenshots/1.PNG)]
 [![Signin Page](https://raw.githubusercontent.com/myselfpawanraj/Newsapp/master/Screenshots/2.PNG)]
